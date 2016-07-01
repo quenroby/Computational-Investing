@@ -1,0 +1,65 @@
+Computational Investing Part 1 Homework:
+http://wiki.quantsoftware.org/index.php?title=CompInvestI_Homework_1
+
+Important note: This is not a realistic way to build a strong portfolio going forward. The intent is for you to learn how to assess a portfolio.
+Homework 1: Scenario
+  •	Given 4 equities (symbols)
+  •	What would have been the optimal allocation to them for the year of 2011?
+  •	Assume: Buy and hold at beginning of year
+
+Part 1 (Look at):
+  •	Examples/Basic/tutorial1.py
+  •	Examples/Basic/tutorial3.py
+  o	Note: The manner in tutorial 3 which we combine the returns from the individual equities to find the performance of the overall portfolio is not the way you should do it in this assignment. 
+
+Part 2:
+  •	Write a Python function called simulate()
+  •	Inputs:
+  o	Start Date
+  o	End Date
+  o	Symbols
+  o	Allocations
+  •	Outputs:
+  o	Standard deviation of returns of portfolio
+  o	Average daily returns of portfolio
+  o	Sharpe ratio of portfolio
+  o	Cumulative return of portfolio
+  Example:
+  Vol, daily_ret, sharpe, cum_ret = simulate(startdate, enddate, [‘GOOG’,’APPL’,’GLD’,’XOM’], [0.2,0.3,0.4,0.1])
+
+Part 2.5:
+Before going to the next part, make sure your function works correctly by checking on the Wiki for this assignment and look at the sample output. 
+  •	Make sure your function provides the correct output
+  •	Check against answer on wiki!
+
+
+Part 3:
+  •	Use your simulate() function to build a portfolio optimizer
+  •	Do this by testing many portfolios
+  •	10% increments (reduces the number of possible portfolios you might have to test so try 1%)
+  •	[0.1, 0.1, 0.6, 0.2] (Example of a legal allocation with 10% increments adding all up to 1)
+  Essentially test thousands of possible portfolios and find for that list of equalities the optimal allocation. 
+  How to do that:
+  •	Setup a couple nested for loops where you increment each allocation and check to make sure it’s a legal allocation. In other words they all add up to one. 
+  •	Then test it with your simulation 
+  •	Record which one is the best
+  So the nested for loops, you can just have them generate all the possibilities but only check the ones that add up to one.
+
+Part 4:
+  •	Create a chart to show off your fantastic portfolio
+  o	Create a chart to show the plotted various parts of your portfolio, and the overall portfolio results, so you rejoice in the success of your portfolio. 
+
+
+
+Check the Wiki before taking the quiz to make sure all outputs match.
+Example Output:
+Start Date: January 1, 2011
+End Date: December 31, 2011
+Symbols: [‘AAPL’, ‘GOOG’, ‘XOM’, ‘GLD’]
+Optimal Allocations: [0.4, 0.0, 0.2, 0.4]
+Sharpe Ratio: 1.02828403099
+Volatility (stdev of daily returns): 0.0101467067654
+Average Daily Return: 0.000657261102001
+Cumulative Return: 1.1648721965
+
+
